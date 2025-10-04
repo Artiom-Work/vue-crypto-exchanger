@@ -5,6 +5,7 @@
     @input="changeAmount($event.target.value)"
   /><br />
   <button @click="convert()">Конвертировать</button>
+  <button @click="favourite()" className="fav-button">В избранное</button>
 </template>
 
 <script>
@@ -15,6 +16,10 @@ export default {
       required: true,
     },
     convert: {
+      type: Function,
+      required: true,
+    },
+    favourite: {
       type: Function,
       required: true,
     },
@@ -47,6 +52,9 @@ button {
   border: 0;
   border-radius: 3px;
   transition-duration: 0.3s;
+}
+.fav-button {
+  margin-left: 16px;
 }
 button:hover {
   background: #24043e;
